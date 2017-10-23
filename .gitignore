@@ -1,0 +1,6 @@
+*.html
+*.iml
+*.png
+.idea
+*.DS*
+target
