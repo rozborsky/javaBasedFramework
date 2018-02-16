@@ -1,0 +1,9 @@
+<suite name="SuiteJqueryui" parallel="methods" thread-count="5">
+    <test name="JqueryuiTests">
+        <classes>
+            <class name="jqueryui.JqueryuiLogoTest" />
+            <class name="jqueryui.JqueryuiListTest" />
+            <class name="jqueryui.JqueryuiDatepickerTest" />
+        </classes>
+    </test> <!-- test -->
+</suite> <!-- suite -->

@@ -27,7 +27,7 @@ public class GoogleSearchTest extends BaseTest {
 
         searchPage.performSearch(searchRequest);
 
-        Assert.fail("fuk");
+//        Assert.fail("fuk");
     }
 
 }

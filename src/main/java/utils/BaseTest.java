@@ -1,12 +1,10 @@
 package utils;
 
-import listeners.GenerateReport;
+
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.BasePage;
-import utils.DriverProvider;
-import utils.ReporterManager;
 
 import java.lang.reflect.Method;
 

@@ -6,7 +6,6 @@ import java.util.List;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-import org.testng.annotations.DataProvider;
 import utils.FileIO;
 import utils.ReporterManager;
 import utils.Tools;
@@ -93,7 +92,7 @@ public class BasePage {
 
         reporter.info("Opening the page: " + "\"" + BASE_URL + pageURL + "\"");
         driver().get(BASE_URL + pageURL);
-        driver().manage().window().maximize();
+//        driver().manage().window().maximize();
     }
 
     public void close() {
@@ -396,5 +395,7 @@ public class BasePage {
         reporter.info("Switch to default content");
         driver().switchTo().defaultContent();
     }
+
+
 
 }

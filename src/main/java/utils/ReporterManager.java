@@ -79,7 +79,7 @@ import com.relevantcodes.extentreports.NetworkMode;
             }
             if (address != null) {
                 testName = "<a href=" + "\"" + address + "\""
-                        + "target=_blank alt=This test is linked to test case. Click to open it>"
+                        + "target=_blank alt=This test is linked to test case. Click to openSection it>"
                         + m.getAnnotation(Test.class).testName() + "</a>";
             } else {
                 try{

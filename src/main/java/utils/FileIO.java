@@ -29,7 +29,7 @@ public class FileIO {
     static String TARGET_FOLDER = "target";
     static String DATA_RESOURCES = "src/main/resources/data/staging/";
     static String PROD_DATA_RESOURCES = "src/main/resources/data/production/";
-    static String CONFIG_FILE = System.getProperty("config");
+    static String CONFIG_FILE = System.getProperty("config");//-Dconfig
     static String PROPERTIES = "src/main/resources/" + (( CONFIG_FILE == null ) ? "default" : CONFIG_FILE) + ".properties";
 
     public static String getConfigProperty(String fieldName){
@@ -37,9 +37,9 @@ public class FileIO {
         String result   = null;
 
         try {
-            //open file
+            //openSection file
             File file = new File(fileLocation);
-            //open input stream to read file
+            //openSection input stream to read file
             FileInputStream fileInput = new FileInputStream(file);
             //create Properties object
             Properties properties = new Properties();
@@ -91,9 +91,9 @@ public class FileIO {
         String result   = null;
 
         try {
-            //open file
+            //openSection file
             File file = new File(fileLocation);
-            //open input stream to read file
+            //openSection input stream to read file
             FileInputStream fileInput = new FileInputStream(file);
             //create Properties object
             Properties properties = new Properties();
@@ -125,7 +125,7 @@ public class FileIO {
 
         try {
 
-            //open file using BufferedReader
+            //openSection file using BufferedReader
             BufferedReader br = new BufferedReader(new FileReader(fileLocation));
 
             //read file line by line
@@ -157,7 +157,7 @@ public class FileIO {
         String result   = null;
 
         try {
-            //open file
+            //openSection file
             File fXmlFile = new File(fileLocation);
             //create factory
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -196,7 +196,7 @@ public class FileIO {
         String result   = null;
 
         try {
-            //open file
+            //openSection file
             File fXmlFile = new File(fileLocation);
             //create factory
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -227,6 +227,7 @@ public class FileIO {
     }
 
     public static String takeScreenshot(WebDriver driver, String name){
+
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String filename = name + "screen.png";
         try {
