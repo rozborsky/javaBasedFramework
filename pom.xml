@@ -14,6 +14,7 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -35,19 +36,6 @@
                         <suiteXmlFile>${tests}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.robotframework</groupId>
-                <artifactId>robotframework-maven-plugin</artifactId>
-                <version>1.4.7</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
