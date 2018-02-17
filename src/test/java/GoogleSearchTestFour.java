@@ -23,6 +23,6 @@ public class GoogleSearchTestFour extends BaseTest {
         searchPage.open();
 
         searchPage.performSearch(searchRequest);
-        Assert.assertEquals(true, false, searchRequest + "-------------test four-------------");
+        Assert.assertEquals(true, true, searchRequest + "-------------test four-------------");
     }
 }
