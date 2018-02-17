@@ -1,14 +1,13 @@
-package google;
-
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.GoogleSearchPage;
 import utils.BaseTest;
 
 /**
  * Created by Kos on 7/17/17.
  */
-public class GoogleSearchTest extends BaseTest {
+public class GoogleSearchTestFour extends BaseTest {
 
     @DataProvider(name = "searches_request_provider")
     public Object[][] provider () throws Exception {
@@ -19,10 +18,11 @@ public class GoogleSearchTest extends BaseTest {
     @Test(dataProvider="searches_request_provider")
     public void Search(String searchRequest){
 
-        GoogleSearchPage searchPage = new GoogleSearchPage();
+        GoogleSearchPageFour searchPage = new GoogleSearchPageFour();
 
         searchPage.open();
 
         searchPage.performSearch(searchRequest);
+        Assert.assertEquals(true, false, searchRequest + "-------------test four-------------");
     }
 }
