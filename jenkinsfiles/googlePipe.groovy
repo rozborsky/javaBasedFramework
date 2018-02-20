@@ -11,10 +11,10 @@ node {
 
     // Archive the built artifacts
     archive (includes: 'pkg/*.gem')
-    
+
     publishHTML([
             allowMissing: false,
             alwaysLinkToLastBuild: false,
             keepAll: false,
-            reportDir: 'target', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            reportDir: 'coverage', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 }
