@@ -19,6 +19,6 @@ node {
             [allowMissing: false,
              alwaysLinkToLastBuild: false,
              keepAll: true,
-             reportDir: 'target',
+             reportDir: '{$WORKSPACE}/target',
              reportFiles: '*.html', reportName: 'HTML Report', reportTitles: ''])
 }
