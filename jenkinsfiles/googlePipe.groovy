@@ -1,7 +1,5 @@
 echo "hey!"
 
-stage 'Build'
-
 //node {
     checkout scm
 
