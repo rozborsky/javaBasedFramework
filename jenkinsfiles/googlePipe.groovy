@@ -3,14 +3,11 @@ echo "hey!"
 stage 'Build'
 
 node {
+    checkout scm
 
-    git 'https://github.com/rozborsky/javaBasedFramework.git'
+    bat "mvn clean install -Dconfig=google_search -Dtests=google_search.xml"
 
-    sh 'bundle install'
-
-    // build and run tests with coverage
-    sh 'bundle exec rake build spec'
-
+    
     // Archive the built artifacts
     archive (includes: 'pkg/*.gem')
 
