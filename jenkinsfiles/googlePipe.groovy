@@ -9,5 +9,5 @@ node ('master'){
             allowMissing: false,
             alwaysLinkToLastBuild: false,
             keepAll: false,
-            reportDir: 'coverage', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            reportDir: 'target', reportFiles: 'Report*.html', reportName: 'HTML Report', reportTitles: ''])
 }
