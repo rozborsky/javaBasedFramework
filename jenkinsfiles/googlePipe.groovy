@@ -1,6 +1,6 @@
 echo "hey!"
 
-//node {
+node ('master'){
     checkout scm
 
     bat "mvn clean install -Dconfig=google_search -Dtests=google_search_suite.xml"
@@ -10,4 +10,4 @@ echo "hey!"
             alwaysLinkToLastBuild: false,
             keepAll: false,
             reportDir: 'coverage', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
-//}
+}
