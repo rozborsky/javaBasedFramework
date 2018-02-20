@@ -4,6 +4,8 @@ stage 'Build'
 
 node {
 
+    git 'https://github.com/rozborsky/javaBasedFramework.git'
+
     sh 'bundle install'
 
     // build and run tests with coverage
