@@ -7,7 +7,6 @@ import org.openqa.selenium.Keys;
  * Created by Admin on 10/20/2017.
  */
 public class GoogleSearchPage extends BasePage{
-
     public GoogleSearchPage(){
         pageURL = "/";
     }
