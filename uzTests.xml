@@ -1,0 +1,9 @@
+<suite name="SuiteUz" parallel="methods" thread-count="5">
+    <test name="UzTests">
+        <classes>
+            <!--<class name="uz.UzShowCityTest" />-->
+            <class name="uz.UzShowAlertTest" />
+            <!--<class name="uz.UzCheckNumberOfTrainsTest" />-->
+        </classes>
+    </test> <!-- test -->
+</suite> <!-- suite -->
