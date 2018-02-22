@@ -1,13 +1,13 @@
-package pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import pages.BasePage;
 
 /**
  * Created by Admin on 10/20/2017.
  */
-public class GoogleSearchPage extends BasePage{
-    public GoogleSearchPage(){
+public class GoogleSearchPageFour extends BasePage{
+
+    public GoogleSearchPageFour(){
         pageURL = "/";
     }
 
