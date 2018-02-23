@@ -22,6 +22,7 @@ public class UzShowCityTest extends BaseTest {
         UzPage uzPage = new UzPage();
         uzPage.open();
         uzPage.setDepartureCity(destinationPoint);
+
         Assert.assertTrue(uzPage.isShowCityName(city));
     }
 }
