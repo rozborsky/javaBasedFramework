@@ -1,0 +1,7 @@
+<suite name="Suite" parallel="none" thread-count="5">
+    <test name="Test">
+        <classes>
+            <class name="sinoptik.SinoptikTest" />
+        </classes>
+    </test> <!-- test -->
+</suite> <!-- suite -->
