@@ -9,7 +9,10 @@ import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 
 /**
@@ -49,8 +52,8 @@ public class DriverProvider {
         caps.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("--kiosk");
-        //chromeOptions.addArguments("--start-maximized");
+//        chromeOptions.addArguments("--kiosk");
+        chromeOptions.addArguments("--start-maximized");
 
         caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
@@ -58,12 +61,37 @@ public class DriverProvider {
 
     }
 
+    static public RemoteWebDriver getRemoteDriver(){
+        final String USERNAME = "romanrozborsky";
+        final String ACCESS_KEY = "b7481b3f-3d3e-48a0-b5b0-8d35cf3657b0";
+
+        try {
+            DesiredCapabilities capabilities = DesiredCapabilities.safari();
+            capabilities.setCapability(CapabilityType.BROWSER_NAME, "safari");
+//            capabilities.setCapability(CapabilityType.VERSION, "51.0");
+            capabilities.setCapability(CapabilityType.PLATFORM, "MAC");
+
+            LoggingPreferences logPrefs = new LoggingPreferences();
+            logPrefs.enable(LogType.BROWSER, Level.OFF);
+            capabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+
+            return new RemoteWebDriver(new URL("http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub"),
+                    capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException("Failure forming the URL to create a web driver", e);
+        }
+    }
+
+
     public static WebDriver getDriver() {
         //if (instance == null)
         if (instance.get() == null)
             if (getCurrentBrowserName().equals(BrowserType.FIREFOX)) {
                 //instance = getFirefox();
                 instance.set(getFirefox());
+            }
+            else if (getCurrentBrowserName().equals(BrowserType.SAFARI)) {
+                instance.set(getRemoteDriver());
             }
             else{
                 //instance = getChrome();
@@ -85,6 +113,8 @@ public class DriverProvider {
         if (BROWSER_TYPE == null)
             if (FileIO.getConfigProperty("Driver").equals("firefox"))
                 BROWSER_TYPE = BrowserType.FIREFOX;
+            else if (FileIO.getConfigProperty("Driver").equals("safari"))
+                BROWSER_TYPE = BrowserType.SAFARI;
             else
                 BROWSER_TYPE = BrowserType.CHROME;
         return BROWSER_TYPE;

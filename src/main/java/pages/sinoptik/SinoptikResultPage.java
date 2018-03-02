@@ -70,11 +70,12 @@ public class SinoptikResultPage extends BasePage {
     public void isShowedWindDirection() {
         clickOnWindDirection();
         findElement(By.xpath("//div[@id='tooltipS']//div[@class='tooltip-tip-content']"));
+        System.out.println();
     }
 
 
     private void clickOnWindDirection() {
-        WebElement windDirection = findElements(By.xpath("//div[@id='blockDays']//table[@class='weatherDetails']//tr[@class='gray']")).get(1);
-        windDirection.findElement(By.tagName("div")).click();
+        WebElement windDirectionRow = findElements(By.xpath("//div[@id='blockDays']//table[@class='weatherDetails']//tr[@class='gray']")).get(1);
+        windDirectionRow.findElement(By.xpath(".//td[contains(@class, 'cur')]//div")).click();
     }
 }
