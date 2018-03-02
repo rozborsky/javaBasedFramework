@@ -13,7 +13,7 @@ import utils.BaseTest;
 public class GreenwayTest extends BaseTest {
     @DataProvider(name = "timer_provider")
     public Object[][] timerProvider () throws Exception {
-        return new String[][]{{"10"}};
+        return new String[][]{{"11"}};
     }
     @Test
     public void changeLanguage(){
